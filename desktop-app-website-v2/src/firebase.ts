@@ -16,16 +16,6 @@ const firebaseConfig = {
   measurementId: process.env.NEXT_PUBLIC_FBASE_MEASUREMENT_ID,
 };
 
-// const firebaseConfig = {
-//   apiKey: "AIzaSyAPhxFV07K-Fhf3blPY9RIkavbRsYpJEx8",
-//   authDomain: "desktop-app-distribution.firebaseapp.com",
-// projectId: "desktop-app-distribution",
-// storageBucket: "desktop-app-distribution.firebasestorage.app",
-// messagingSenderId: "30202797598",
-// appId: "1:30202797598:web:45656c7ecd9479d832180f",
-// measurementId: "G-16KJ2FRY4C"
-// };
-
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
