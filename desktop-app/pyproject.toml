@@ -1,4 +1,7 @@
 # TODO: change the following settings accordingly for code obfuscation with cython or nuitka
+
+# NOTE: this file is not yet comoplete.  do not try to install as a package yet
+
 [build-system]
 requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
@@ -11,5 +14,15 @@ requires-python = ">=3.8"
 readme = "README.md"
 dynamic = ["dependencies", "optional-dependencies"]
 
+[project.scripts]
+basic-app = "basic_app:main"
+
 [tool.setuptools.dynamic.dependencies]
 file = "requirements.txt"
+
+[tool.setuptools.dynamic.optional-dependencies]
+dev = { file = "requirements-dev.txt" }
+test = { file = "requirements-test.txt" }
+
+[tool.setuptools]
+py-modules = ["basic_app"]

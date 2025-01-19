@@ -1,0 +1,3 @@
+python-dotenv
+requests
+keyring; sys.platform == "darwin"
