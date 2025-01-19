@@ -2,7 +2,10 @@
 
 TODO: fill out this page with good documentation :)
 
-for now basing it on https://www.youtube.com/watch?v=
+for now basing it on https://www.youtube.com/watch?v=  .  That video contains basic firebase setup instructions
+
+use https://extensions.dev/extensions/invertase/firestore-stripe-payments for stripe integration
+
 boilerplate template https://github.com/Nitij/react-firebase-auth-boilerplate
 
 the files in this subfolder were generated with `npx create-react-app ...`
