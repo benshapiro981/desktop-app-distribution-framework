@@ -1,0 +1,4 @@
+mypy[mypyc]
+pytest
+build
+setuptools

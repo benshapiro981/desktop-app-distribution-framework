@@ -1,0 +1,15 @@
+# TODO: change the following settings accordingly for code obfuscation with cython or nuitka
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sample-desktop-app"
+version = "0.0.1"  # TODO: figure out how to inc automatically
+description = "A sample desktop app"
+requires-python = ">=3.8"
+readme = "README.md"
+dynamic = ["dependencies", "optional-dependencies"]
+
+[tool.setuptools.dynamic.dependencies]
+file = "requirements.txt"
