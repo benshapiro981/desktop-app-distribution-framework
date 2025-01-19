@@ -65,6 +65,7 @@ def sign_in(email: str, pwd: str) -> tuple[str, str] | tuple[None, None]:
         return str(resp_decoded["idToken"]), str(resp_decoded["refreshToken"])
 
 if sys.platform == "win32":
+    # for windows
     # TODO: implement the following functions
     #  note that they have uniform interface with mac os 
     
@@ -90,6 +91,7 @@ if sys.platform == "win32":
     raise NotImplementedError
 
 elif sys.platform == "darwin":
+    # for mac os 
     import keyring
     import keyring.errors
     
@@ -124,10 +126,10 @@ elif sys.platform == "darwin":
             # suppress exception if it is already deleted for idempotency 
             if "item not found" not in str(e).lower():
                 raise
-            
-            
 
 else:
+    # for linux and other platformss
+    #  problem with linux is that there is no good solution to securely store the tokens
     raise NotImplementedError
 
 def clear_tokens() -> None:
