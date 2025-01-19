@@ -7,18 +7,18 @@ import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 export default function Home() {
   const router = useRouter();
 
-  const app = initFirebase();
-  const auth = getAuth(app);
-  const provider = new GoogleAuthProvider();
+  // const app = initFirebase();
+  // const auth = getAuth(app);
+  // const provider = new GoogleAuthProvider();
 
-  const signIn = async () => {
-    const result = await signInWithPopup(auth, provider);
-    const user = result.user;
+  // const signIn = async () => {
+  //   const result = await signInWithPopup(auth, provider);
+  //   const user = result.user;
 
-    if (user) {
-      goToAccount();
-    }
-  };
+  //   if (user) {
+  //     goToAccount();
+  //   }
+  // };
 
   const rightArrow = (
     <svg
@@ -37,10 +37,17 @@ export default function Home() {
     </svg>
   );
 
-  const goToAccount = () => {
-    router.push("/account");
-  };
+  // const goToAccount = () => {
+  //   router.push("/account");
+  // };
 
+  const goToSignin = () => {
+    router.push("/signIn");
+  }
+
+  const goToSignUp = () => {
+    router.push("/signUp");
+  }
 
   return (
     <>
@@ -52,12 +59,28 @@ export default function Home() {
       <div className="text-xl md:text-2xl font-light mb-8">
         Welcome! Let's get started.
       </div>
-      <button
+      {/* <button
         onClick={signIn}
         className="bg-blue-600 p-4 px-6 text-lg rounded-lg hover:bg-blue-700 shadow-lg"
       >
         <div className="flex gap-2 items-center align-middle">
           Auth with google {rightArrow}
+        </div>
+      </button> */}
+      <button
+        onClick={goToSignin}
+        className="bg-blue-600 p-4 px-6 text-lg rounded-lg hover:bg-blue-700 shadow-lg"
+      >
+        <div className="flex gap-2 items-center align-middle">
+          Sign in {rightArrow}
+        </div>
+      </button>
+      <button
+        onClick={goToSignUp}
+        className="bg-blue-600 p-4 px-6 text-lg rounded-lg hover:bg-blue-700 shadow-lg"
+      >
+        <div className="flex gap-2 items-center align-middle">
+          Sign up {rightArrow}
         </div>
       </button>
     </>

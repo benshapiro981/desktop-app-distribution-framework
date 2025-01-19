@@ -23,7 +23,8 @@ const AuthRouter = (props: any) => {
       if (firebaseUser) {
         router.push(ACCOUNT_ROUTE);
       } else {
-        router.push(HOME_ROUTE);
+        // router.push(HOME_ROUTE);
+        // if (router.path)
       }
     }
   };
