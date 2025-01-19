@@ -2,9 +2,11 @@
 
 TODO: fill out this page with good documentation :)
 
-for now basing it on https://www.youtube.com/watch?v=WpIDez53SK4
+for now basing it on https://www.youtube.com/watch?v=
+boilerplate template https://github.com/Nitij/react-firebase-auth-boilerplate
 
 the files in this subfolder were generated with `npx create-react-app ...`
+
 
 
 # Getting Started with Create React App
