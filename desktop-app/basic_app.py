@@ -64,36 +64,21 @@ def sign_in(email: str, pwd: str) -> tuple[str, str] | tuple[None, None]:
         resp_decoded = resp.json()
         return str(resp_decoded["idToken"]), str(resp_decoded["refreshToken"])
 
-if sys.platform == "win32":
-    # for windows
-    # TODO: implement the following functions
-    #  note that they have uniform interface with mac os 
-    
-    # https://stackoverflow.com/questions/56068787/where-to-store-a-jwt-token-locally-on-computer
-    
-    def get_acc_tok() -> str | None:
-        ...
-        
-    def get_refresh_tok() -> str | None:
-        ...
-    
-    def set_acc_tok(tok: str) -> None:
-        ...
-        
-    def set_refresh_tok(tok: str) -> None:
-        ...
-        
-    def clear_acc_tok() -> None:
-        ...
-        
-    def clear_refresh_tok() -> None:
-        ...
-    raise NotImplementedError
+if sys.platform == "win32" or sys.platform == "darwin":
 
-elif sys.platform == "darwin":
-    # for mac os 
+    # apparently this keyring lib supports both windows and mac 
+
     import keyring
     import keyring.errors
+    
+    # ensure correct backend is used
+    if sys.platform == "win32":
+        from keyring.backends.Windows import WinVaultKeyring as KeyringBackend
+    else:
+        from keyring.backends.macOS import Keyring as KeyringBackend
+        
+    if not isinstance(keyring.get_keyring(), KeyringBackend):
+        keyring.set_keyring(KeyringBackend())
     
     _service_name = "basic_app"
     _acc_tok_name = "acctok"
@@ -130,6 +115,8 @@ elif sys.platform == "darwin":
 else:
     # for linux and other platformss
     #  problem with linux is that there is no good solution to securely store the tokens
+    #  no guarantee that keyring lib will have a backend to support it 
+    #  so for now we do not support linux 
     raise NotImplementedError
 
 def clear_tokens() -> None:
