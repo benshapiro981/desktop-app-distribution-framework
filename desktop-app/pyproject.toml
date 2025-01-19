@@ -8,7 +8,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "sample-desktop-app"
-version = "0.0.1"  # TODO: figure out how to inc automatically
+version = "0.1.0"  # TODO: figure out how to inc automatically
 description = "A sample desktop app"
 requires-python = ">=3.8"
 readme = "README.md"
