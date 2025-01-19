@@ -5,6 +5,7 @@ TODO: fill out this page with good documentation :)
 for now basing it on https://www.youtube.com/watch?v=  .  That video contains basic firebase setup instructions
 
 use https://extensions.dev/extensions/invertase/firestore-stripe-payments for stripe integration
+also https://www.youtube.com/watch?v=KiEgUp91ejc&list=PLUyOH6KXr3dfjR8U66lHoaarhctuvEN5e&index=5 and https://www.youtube.com/watch?v=VnntkusKinM&list=PLUyOH6KXr3dfjR8U66lHoaarhctuvEN5e&index=7
 
 boilerplate template https://github.com/Nitij/react-firebase-auth-boilerplate
 
