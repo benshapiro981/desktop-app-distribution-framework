@@ -25,6 +25,10 @@ const AuthRouter = (props: any) => {
       } else {
         // router.push(HOME_ROUTE);
         // if (router.path)
+        if (pathName === ACCOUNT_ROUTE) {
+          // force no access to account route if not auth
+          router.replace(HOME_ROUTE);
+        }
       }
     }
   };
