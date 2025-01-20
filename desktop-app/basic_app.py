@@ -6,7 +6,7 @@ import time
 import warnings
 
 import cowsay
-import dotenv
+import dotenv  # TODO: swap this out for just running the script with env vars
 import requests
 from google.oauth2.credentials import Credentials as OAuth2Credentials
 from google.cloud.firestore import Client as FirestoreClient
